@@ -1,4 +1,5 @@
 ﻿using Discord;
+using Discord.Commands;
 using Discord.WebSocket;
 using System;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ namespace BotTemplate
     public class Program
     {
         private DiscordSocketClient client;
+        private CommandService commands;
+        private CommandHandler handler;
         /// <summary>
         ///     The name of the environment variable, which will contain your Bot's token.
         /// </summary>
@@ -19,7 +22,12 @@ namespace BotTemplate
         public async Task MainAsync()
         {
             client = new DiscordSocketClient();
+            commands = new CommandService();
             client.Log += Log;
+
+            handler = new CommandHandler(client, commands);
+            await handler.InstallCommandsAsync();
+            
             await client.LoginAsync(TokenType.Bot,
                 Environment.GetEnvironmentVariable(TokenEnvironmentVariable));
             await client.StartAsync();

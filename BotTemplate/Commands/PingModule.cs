@@ -2,12 +2,12 @@
 using Discord.Commands;
 using System.Threading.Tasks;
 
-namespace BotTemplate.Commands
+namespace BotTemplate
 {
     public class PingModule : ModuleBase
     {
-        [Command]
-        public async Task Ping()
+        [Command("ping")]
+        public async Task PingCommand()
         {
             await ReplyAsync("Pong!");
         }

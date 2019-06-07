@@ -21,8 +21,7 @@ This template does not include any code for:
 
 ## Usage
 
-TODO: See how templates really work in GitHub
-
-1. Make a template of this project base.
-2. Clone it.
+1. Click "Use this template" on this page, or [click here](https://github.com/Chris-Johnston/Discord.Net-Bot-Template/generate).
+2. Clone your new repo.
 3. (Optional, but recommended) Rename solution files, project files, and relative paths.
+4. Set your `DiscordToken` environment variable, and run your bot.

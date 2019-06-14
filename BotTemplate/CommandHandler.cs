@@ -19,8 +19,11 @@ namespace BotTemplate
         public async Task InstallCommandsAsync()
         {
             client.MessageReceived += HandleCommandAsync;
-            // no Dependency Injection is set up
-            // refer to the Dependency Injection guide in the Discord.Net documentation
+            // The second parameter of AddModulesAsync is the service provider
+            // that will be used for Dependency Injection (DI)
+            // By passing a value of null, DI will not be used.
+            // Refer to the "Dependency Injection" guide in the documentation
+            // for more information.
             await commands.AddModulesAsync(Assembly.GetEntryAssembly(), null);
         }   
 
@@ -36,7 +39,8 @@ namespace BotTemplate
                 return;
 
             var context = new SocketCommandContext(client, message);
-            // No DI is set up here either. Refer to the D.NET documentation.
+            // A null service provider parameter is passed,
+            // Dependency Injection is not being used here.
             await commands.ExecuteAsync(context, argPos, null);
         }
     }

@@ -11,6 +11,8 @@ The code in this project is based on the examples provided in the offical docume
 This template includes the logic for creating a new Discord Bot, logging in with
 a bot token provided in Environment Variables, and executing a `!ping` command.
 
+Check the `docker` branch for a Dockerfile image template.
+
 ## What's not included:
 
 This template does not include any code for:
